@@ -19,6 +19,7 @@ public slots:
     void newDuplicate(QList<QStandardItem*> &duplicate);
     void parseFinished();
 private:
+    void deleteFiles(QModelIndexList &indexList);
     QFileDialog *fileDialog;
     QStandardItemModel* duplicates;
     TrackParser* parser;

@@ -27,7 +27,11 @@ void TrackParser::start()
             return;
         QString file(dirIter->next());
         if (!file.endsWith(".mp3"))
+        {
+            //stop nonresponsive gui during check of files that arent mp3s
+            QCoreApplication::processEvents();
             continue;
+        }
         ID3Tag* song = new ID3Tag(file, this);
         if (song->getTitle() == "")
             continue;

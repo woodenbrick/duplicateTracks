@@ -41,7 +41,6 @@ ID3Tag::ID3Tag(QString songfile, QObject* parent) : QObject(parent)
 
 ID3Tag::~ID3Tag()
 {
-    qDebug() << "deleting" << title;
     delete file;
 }
 
