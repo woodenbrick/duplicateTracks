@@ -1,4 +1,7 @@
 #include "id3tag.h"
+//#include "taglib/taglib.h"
+//#include "taglib/fileref.h"
+//#include "taglib/tag.h"
 #include <QDebug>
 
 ID3Tag::ID3Tag(QString songfile, QObject* parent) : QObject(parent)
@@ -24,7 +27,21 @@ ID3Tag::ID3Tag(QString songfile, QObject* parent) : QObject(parent)
         QByteArray info = file->read(3);
         if(info != "TAG")
         {
-            qDebug() << file->fileName();
+            qDebug() << "No ID3Tag" << file->fileName();
+//            //check if its ID3v2
+//            file->close();
+//            TagLib::FileRef f(songfile.toUtf8());
+//            if(f.tag()->isEmpty())
+//            {
+//                qDebug() << "No ID3v2";
+//                return;
+//            }
+//            title = f.tag()->title().toCString(true);
+//            artist = f.tag()->artist().toCString(true);
+//            album = f.tag()->album().toCString(true);
+//            year = QString::number(f.tag()->year());
+//            comment = f.tag()->comment().toCString(true);
+//            genre = f.tag()->genre().toCString(true);
         }
         else
         {

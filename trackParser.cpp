@@ -1,6 +1,5 @@
 
 #include <QFile>
-#include <QDebug>
 #include <QDirIterator>
 #include <QStandardItem>
 #include <QCoreApplication>

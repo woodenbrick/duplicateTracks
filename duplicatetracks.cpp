@@ -1,5 +1,4 @@
 #include "duplicatetracks.h"
-#include <QDebug>
 #include <QHeaderView>
 #include <QEvent>
 #include <QKeyEvent>
@@ -78,7 +77,10 @@ void DuplicateTrackWindow::newDuplicate(QList<QStandardItem*> &duplicate)
     {
         duplicates->appendRow(duplicate);
     }
+
     duplicatesFoundCount->setNum(duplicates->rowCount());
+    //tableView->resizeColumnsToContents();
+    //tableView->horizontalHeader()->setResizeMode(2, QHeaderView::Stretch);
 }
 
 
